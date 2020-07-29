@@ -10,8 +10,8 @@ def login():
         return redirect(url_for("user", usr=user))
     else:
         return render_template("login.html")
-@app.route("/<usr>")
-def user(usr):
-    return "<h1>{usr}</h1>"
+@app.route("/action_page")
+def action():
+    return render_template("action_page.php")
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
